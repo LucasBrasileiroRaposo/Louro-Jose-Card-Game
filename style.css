@@ -1,0 +1,40 @@
+header{
+    color: white;
+    text-align: center;
+}
+body{
+    background:rgb(0, 217, 255);
+    font: normal 20pt Arial;
+    margin-top: 100px;
+
+}
+
+section{
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    margin-top: 100px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.342);
+    font-size: 16pt;
+
+}
+div{
+    text-align: center;
+    padding: 8px;
+}
+
+input#jogarButton{
+    height: 40px;
+    width: 100px;
+    font-size: 16pt;
+}
+
+footer{
+    color: white;
+    text-align: center;
+    font-style: italic;
+    font-size: 16pt;
+    margin-top: 400px;
+}
