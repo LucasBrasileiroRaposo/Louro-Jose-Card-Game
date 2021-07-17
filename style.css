@@ -1,15 +1,23 @@
 header{
     color: white;
+    /* background: linear-gradient(0deg, #61cf3d, #16C0B0); */
+    background: rgb(41, 41, 214);
+    font:  14pt monaco, monospace;
+    height: 100%;
+ 
+}
+
+.logo{
+    height: 100%;
     text-align: center;
 }
 body{
-    background:rgb(0, 217, 255);
+    background:rgb(187, 245, 255);
     font: normal 20pt Arial;
-    margin-top: 100px;
 
 }
 
-section{
+section#menu{
     background: white;
     border-radius: 10px;
     padding: 15px;
@@ -19,6 +27,15 @@ section{
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.342);
     font-size: 16pt;
 
+}
+section#game{
+
+    background: rgb(190, 190, 190);
+    border-radius: 10px;
+    width: 1500px;
+    height: 700px;
+    margin: auto;
+    
 }
 div{
     text-align: center;
@@ -36,5 +53,5 @@ footer{
     text-align: center;
     font-style: italic;
     font-size: 16pt;
-    margin-top: 400px;
+    top: 800px;
 }

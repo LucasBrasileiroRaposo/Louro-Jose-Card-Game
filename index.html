@@ -7,34 +7,31 @@
     <title>Louro Jose Card Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-            <h1>Louro Jose Card Game</h1>
-    </header>
-    <body>
-        <section>
-            <div> 
-                <p>Digite seu nome:<input type="text" id="nome"></p>
-                <p>Com quartas cartas você quer jogar? (4-14) 
-                    <select id = "qtndDeCartas" > 
-                        <option value="4">4</option>
-                        <option value="6">6</option>
-                        <option value="8">8</option>
-                        <option value="10">10</option>
-                        <option value="12">12</option>
-                        <option value="14">14</option>
-                    </select>
-                </p>
-                <p>
-                     
-                    <input type="button" id="jogarButton" value="Jogar" onclick="jogar()">
-                </p>
+<body id="main" class="main" onload="hideGame()">
+    <header class="cabecalho">
+        
+            <div class="logo">
+                <h1 id="titulo"><img src="C:\Users\LUCAS\Documents\JavaScript\Projeto1Teste\Louro-Jose-Card-Game\images\static_parrot.png" alt="logo" id="logo">Louro Jose Card Game <img src="C:\Users\LUCAS\Documents\JavaScript\Projeto1Teste\Louro-Jose-Card-Game\images\static_parrot.png" alt="logo" id="logo"></h1>
             </div>
            
-        </section>
-   
-    </body>
-
+    </header>
+    <section id="menu">
+        <div> 
+            <p>Digite seu nome:<input type="text" id="nome"></p>
+            <p>Com quartas cartas você quer jogar? (4-14) 
+                <input type="Number" id="qtndDeCartas" required>
+                <a href="cardgame.html" atributoper></a>
+            </p>
+            <p>
+                <input type="button" id="jogarButton" value="Jogar" onclick="jogar()">
+            </p>
+        </div>      
+    </section>
+    <section id="game" >
+        <div>
+            Joguinho aqui
+        </div>
+    </section>
     <footer>
         <p>&copy; LucasBrasileiroRaposo</p>
     </footer>
