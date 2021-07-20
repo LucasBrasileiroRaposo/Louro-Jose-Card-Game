@@ -13,13 +13,13 @@
     text-align: center;
 }
 .imagemExtra1{
-    margin-left: 300px;
+    margin-left: 200px;
     margin-top: 150px;
     transform:rotateZ(-30deg);
 }
 .imagemExtra2{
-    margin-top: -400px;
-    margin-left: 1400px;
+    margin-top: -200px;
+    margin-left: 1000px;
     transform:rotateZ(30deg);
 }
 body{
