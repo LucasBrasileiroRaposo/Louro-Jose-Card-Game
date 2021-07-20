@@ -1,5 +1,6 @@
 var inputBotão = document.querySelector('input#jogarButton');
 const cabeçalhoPagina = document.querySelector('header.cabecalho');
+const imagensExtras = document.querySelector('div.imagensExtras');
 var gameBoard = document.querySelector('div#cardBoard');
 const acervoCartas = ['C:/Users/LUCAS/Documents/JavaScript/Projeto1Teste/Louro-Jose-Card-Game/images/static_parrot.png','C:/Users/LUCAS/Documents/JavaScript/Projeto1Teste/Louro-Jose-Card-Game/images/404error_parrot.gif',
 "C:/Users/LUCAS/Documents/JavaScript/Projeto1Teste/Louro-Jose-Card-Game/images/hypno_parrot_dark.gif","C:/Users/LUCAS/Documents/JavaScript/Projeto1Teste/Louro-Jose-Card-Game/images/john_francis_parrot.png",
@@ -37,7 +38,9 @@ function jogar() {
 };
 function game(numeroDePares) {
 
+    cabeçalhoPagina.style.font = 20;
     inputBotão.style.display = 'none';
+    imagensExtras.style.display = 'none';
     acervoCartas.sort(comparer);
 
     for(let i = 0; i < numeroDePares; i++) {
@@ -47,11 +50,11 @@ function game(numeroDePares) {
 
     } 
     cartasUsadas.sort(comparer);
-    distribuidorCartas(cartasUsadas,numeroDePares);
+    distribuidorCartas(cartasUsadas);
 
 }
 
-function distribuidorCartas(cartasUsadas,numeroDePares){
+function distribuidorCartas(cartasUsadas){
 
 
     cartasUsadas.forEach( e => {
@@ -138,7 +141,14 @@ function reiniciar(){
 
     let restart = window.confirm("Deseja jogar novamente ?");
 
-    restart ? jogar() : rest;
+    if(restart){
+        cartasUsadas = []; 
+        paresEncontrados = 0;
+        contadorDeJogadas =0;
+        totalPares = 0;
+        saidaGame = '';
+        jogar();
+    }
 
 }
 
