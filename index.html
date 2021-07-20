@@ -7,7 +7,7 @@
     <title>Louro Jose Card Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body id="main" class="main" onload="hideGame()">
+<body id="main" class="main" >
     <header class="cabecalho">
         
             <div class="logo">
@@ -15,25 +15,17 @@
             </div>
            
     </header>
-    <section id="menu">
+    <section id="game" >
         <div> 
-            <p>Digite seu nome:<input type="text" id="nome"></p>
-            <p>Com quartas cartas você quer jogar? (4-14) 
-                <input type="Number" id="qtndDeCartas" required>
-                <a href="cardgame.html" atributoper></a>
-            </p>
-            <p>
+            <p id="button">
                 <input type="button" id="jogarButton" value="Jogar" onclick="jogar()">
             </p>
-        </div>      
-    </section>
-    <section id="game" >
-        <div>
-            Joguinho aqui
+        </div>    
+        <div id = "cardBoard" class="cardBoard">
         </div>
     </section>
     <footer>
-        <p>&copy; LucasBrasileiroRaposo</p>
+        <p>&copy;LucasBrasileiroRaposo</p>
     </footer>
     
     <script src="script.js"></script>

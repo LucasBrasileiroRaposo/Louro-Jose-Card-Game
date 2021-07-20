@@ -1,13 +1,13 @@
 header{
     color: white;
-    /* background: linear-gradient(0deg, #61cf3d, #16C0B0); */
-    background: rgb(41, 41, 214);
-    font:  14pt monaco, monospace;
-    height: 100%;
- 
+    background: rgb(32, 32, 165);
+    font:  20pt monaco, monospace;
+    height: 100px;
+    
 }
 
 .logo{
+    
     height: 100%;
     text-align: center;
 }
@@ -16,36 +16,50 @@ body{
     font: normal 20pt Arial;
 
 }
-
-section#menu{
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    width: 500px;
-    margin: auto;
-    margin-top: 100px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.342);
-    font-size: 16pt;
-
-}
-section#game{
-
-    background: rgb(190, 190, 190);
-    border-radius: 10px;
-    width: 1500px;
-    height: 700px;
-    margin: auto;
-    
-}
-div{
+#button{
     text-align: center;
     padding: 8px;
+    margin-top: 100px;
 }
-
 input#jogarButton{
     height: 40px;
     width: 100px;
     font-size: 16pt;
+}
+div#cardBoard{
+    width: 300px;
+    height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;  
+    
+}
+div.carta{
+    width: calc(40% - 20px);
+    height: 33%;
+    margin: 20px;
+    bottom: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+div.carta:active{
+    transform: scale(0.90);
+}
+div.carta.girar{
+    transform: rotateY(180deg);
+}
+#frente{
+    transform: rotateY(180deg);
+}
+#frente,#verso{
+    width: 100%;
+    height:100%;
+    padding: 10px;
+    background:rgb(38, 59, 61);
+    position: absolute;
+    border: thin solid black;
+    border-radius: 10px;
 }
 
 footer{
@@ -53,5 +67,5 @@ footer{
     text-align: center;
     font-style: italic;
     font-size: 16pt;
-    top: 800px;
+    top: 300px;
 }
