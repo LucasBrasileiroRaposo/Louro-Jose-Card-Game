@@ -2,10 +2,10 @@ var inputBotão = document.querySelector('input#jogarButton');
 const cabeçalhoPagina = document.querySelector('header.cabecalho');
 const imagensExtras = document.querySelector('div.imagensExtras');
 var gameBoard = document.querySelector('div#cardBoard');
-const acervoCartas = ['C:/Users/LUCAS/Documents/JavaScript/Projeto1Teste/Louro-Jose-Card-Game/images/static_parrot.png','C:/Users/LUCAS/Documents/JavaScript/Projeto1Teste/Louro-Jose-Card-Game/images/404error_parrot.gif',
-"C:/Users/LUCAS/Documents/JavaScript/Projeto1Teste/Louro-Jose-Card-Game/images/hypno_parrot_dark.gif","C:/Users/LUCAS/Documents/JavaScript/Projeto1Teste/Louro-Jose-Card-Game/images/john_francis_parrot.png",
-'C:\Users/LUCAS/Documents/JavaScript/Projeto1Teste/Louro-Jose-Card-Game/images/parrot_dad.gif','C:/Users/LUCAS/Documents/JavaScript/Projeto1Teste/Louro-Jose-Card-Game/images/feminist_parrot.png',
-'C:\Users/LUCAS/Documents/JavaScript/Projeto1Teste/Louro-Jose-Card-Game/images/virusparrot.png'];
+const acervoCartas = ['images/static_parrot.png','images/404error_parrot.gif',
+"images/hypno_parrot_dark.gif","images/john_francis_parrot.png",
+'images/parrot_dad.gif','images/feminist_parrot.png',
+'images/virusparrot.png'];
 let cartasUsadas = [];
 let saidaGame = '';
 let totalPares = 0;
@@ -61,7 +61,7 @@ function distribuidorCartas(cartasUsadas){
         saidaGame += `
             <div id="carta" class="carta" data-value="${e}">
                 <img id="frente" src="${e}">
-                <img id="verso" src='C:/Users/LUCAS/Documents/JavaScript/Projeto1Teste/Louro-Jose-Card-Game/images/louroJose.jpg'>
+                <img id="verso" src='images/louroJose.jpg'>
             </div>
             `;
     });
