@@ -43,12 +43,16 @@ function game(numeroDePares) {
     imagensExtras.style.display = 'none';
     acervoCartas.sort(comparer);
 
-    for(let i = 0; i < numeroDePares; i++) {
-        
-        cartasUsadas.push(acervoCartas[i]);
-        cartasUsadas.push(acervoCartas[i]);
+    acervoCartas.forEach( (_, i) => {
+      
+        if(i < numeroDePares){
 
-    } 
+            cartasUsadas.push(acervoCartas[i]);
+            cartasUsadas.push(acervoCartas[i]);
+        }
+        
+    });
+
     cartasUsadas.sort(comparer);
     distribuidorCartas(cartasUsadas);
 
@@ -57,10 +61,10 @@ function game(numeroDePares) {
 function distribuidorCartas(cartasUsadas){
 
 
-    cartasUsadas.forEach( e => {
+    cartasUsadas.forEach( (e,i) => {
         saidaGame += `
-            <div id="carta" class="carta" data-value="${e}">
-                <img id="frente" src="${e}">
+            <div id="carta${i}" class="carta" data-value="${e}">
+                <img id="frente" draggable="false" src="${e}">
                 <img id="verso" src='images/louroJose.jpg'>
             </div>
             `;
@@ -94,7 +98,7 @@ function girar() {
             
         primeiraCarta = this;
         return ;        
-    }else {
+    }else if(primeiraCarta && primeiraCarta.id !== this.id){
         segundaCarta = this;
     }
         
