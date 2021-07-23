@@ -1,7 +1,7 @@
-var inputBotão = document.querySelector('input#jogarButton');
+const inputBotão = document.querySelector('input#jogarButton');
 const cabeçalhoPagina = document.querySelector('header.cabecalho');
 const imagensExtras = document.querySelector('div.imagensExtras');
-var gameBoard = document.querySelector('div#cardBoard');
+const mesaDoJogo = document.querySelector('div#cardBoard');
 const acervoCartas = ['images/static_parrot.png','images/404error_parrot.gif',
 "images/hypno_parrot_dark.gif","images/john_francis_parrot.png",
 'images/parrot_dad.gif','images/feminist_parrot.png',
@@ -21,18 +21,18 @@ function validaNumeroCartas(nCartas) {
 }
 function jogar() {
 
-    let aux = window.prompt('Com quantas cartas deseja jogar? (4-14)');
+    let entradaNumeroCartas = window.prompt('Com quantas cartas deseja jogar? (4-14)');
     
-    while (!validaNumeroCartas(Number(aux))){
-        if(!aux) {break;}
+    while (!validaNumeroCartas(Number(entradaNumeroCartas))){
+        if(!entradaNumeroCartas) {break;}
 
-        aux = Number(window.prompt(`Valor inválido, por favor insira um novo valor, que esteja dentro do espaço amostral citado! \n
-                                        Com quantas cartas deseja jogar? (4-14)`));
+        entradaNumeroCartas = window.prompt(`Valor inválido, por favor insira um novo valor, que esteja dentro do espaço amostral citado! \n
+                                        Com quantas cartas deseja jogar? (4-14)`);
     }
 
-    if(aux){
-        totalPares = Number(aux)/2;
-        game(aux/2);
+    if(entradaNumeroCartas){
+        totalPares = Number(entradaNumeroCartas)/2;
+        game(entradaNumeroCartas/2);
     } 
 
 };
@@ -66,7 +66,7 @@ function distribuidorCartas(cartasUsadas){
             `;
     });
     
-    gameBoard.innerHTML = saidaGame;
+    mesaDoJogo.innerHTML = saidaGame;
     rotacionaCartas();
 
 }
@@ -86,8 +86,6 @@ let paresEncontrados = 0;
 
 
 function girar() {
-    console.log(paresEncontrados);
-    console.log(contadorDeJogadas);
     
     if(checkLimiteCartas) return false;
     this.classList.add('girar');
@@ -111,7 +109,7 @@ function confereParCartas(){
     if(!checkPar){
         desviraCarta()
     }else{
-        if(++paresEncontrados == totalPares){
+        if(++paresEncontrados === totalPares){
             window.alert(`Parabéns você ganhou com ${contadorDeJogadas} jogadas!`);
             reiniciar();
         }
