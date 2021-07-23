@@ -203,17 +203,21 @@ function resetacronometro () {
     segundos = 0;
 }
 function voltarPaginaInicial(){
-    cartasUsadas = []; 
-    paresEncontrados = 0;
-    contadorDeJogadas =0;
-    totalPares = 0;
-    saidaGame = '';
-    mesaDoJogo.innerHTML = "";
-    cabecalho.style.display = 'block';
-    cabecalho2.style.display = 'none';
-    inputBotão.style.display = 'block';
-    inputBotão.style.position = 'absolute';
-    inputBotão.style.left = '900px';
-    imagensExtras.style.display = 'block';
     
+    let confirmacao = window.confirm('Tem certeza que deseja sair da tela de jogo e voltar para o menu? ');
+
+    if(confirmacao){
+        cartasUsadas = []; 
+        paresEncontrados = 0;
+        contadorDeJogadas =0;
+        totalPares = 0;
+        saidaGame = '';
+        mesaDoJogo.innerHTML = "";
+        cabecalho.style.display = 'block';
+        cabecalho2.style.display = 'none';
+        inputBotão.style.display = 'block';
+        inputBotão.style.position = 'absolute';
+        inputBotão.style.left = '900px';
+        imagensExtras.style.display = 'block';
+    }
 }
