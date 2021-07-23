@@ -3,7 +3,6 @@
     margin-left: 0px;
     margin-right: 0px;
     color: rgb(255, 255, 255);
-    font:  30pt monaco, monospace;
     height: 100px;
    
 }
@@ -18,6 +17,7 @@ img{
 .logo{
     height: 100%;
     text-align: center;
+    font:  30pt monaco, monospace;
 }
 .imagemExtra1{
     margin-left: 200px;
@@ -79,11 +79,28 @@ div.carta.girar{
     border: thin solid black;
     border-radius: 10px;
 }
+#timer{
+    top: 50px;
+    right: 100px;
+    position: absolute;
+    color: white;
+    font:  16pt monaco, monospace;
+}
+.nomeDoJogo{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font:  20pt monaco, monospace;
+
+}
+.logo2{
+    display: none;
+}
 
 footer{
     color: white;
     text-align: center;
     font-style: italic;
     font-size: 16pt;
-    top: 300px;
+    margin-top: 200px;
 }

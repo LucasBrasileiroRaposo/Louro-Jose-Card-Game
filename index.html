@@ -9,16 +9,26 @@
 </head>
 <body id="main" class="main" >
     <header class="cabecalho">
-        
+           
             <div class="logo">
-                <h1 id="titulo"><img src="images/static_parrot.png" alt="logo" id="logo">Louro Jose Card Game <img src="images/static_parrot.png" alt="logo" id="logo"></h1>
+                <h1 id="titulo"><img draggable="false" src="images/static_parrot.png" alt="logo" id="logo">Louro Jose Card Game <img draggable="false" src="images/static_parrot.png" alt="logo" id="logo"></h1>
             </div>
+            
             <div class="imagensExtras">
                 <img draggable="false"  src="images\ana-maria-braga-covid-19-1.jpg" alt="anaMaria" class="imagemExtra1">
                 <img draggable="false" src="images\louroExtra.jpg" alt="louroExtra" class="imagemExtra2">
             </div>
+            <div class="logo2">
+                <div class="nomeDoJogo" onclick="voltarPaginaInicial()">
+                    <h1 id="titulo"><img src="images/static_parrot.png" alt="logo" id="logo">Louro Jose Card Game <img src="images/static_parrot.png" alt="logo" id="logo"></h1>
+                </div>
+                <div id="timer">
+                    <h2 id="counter">Tempo: 00:00:00</h2>
+                </div>
+            </div>
     </header>
     <section id="game" >
+       
         <div> 
             <p id="button">
                 <input type="button" id="jogarButton" value="Jogar" onclick="jogar()">

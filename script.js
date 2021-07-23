@@ -1,5 +1,6 @@
 const inputBotão = document.querySelector('input#jogarButton');
-const cabeçalhoPagina = document.querySelector('header.cabecalho');
+const cabecalho = document.querySelector('.logo');
+const cabecalho2 = document.querySelector('.logo2');
 const imagensExtras = document.querySelector('div.imagensExtras');
 const mesaDoJogo = document.querySelector('div#cardBoard');
 const acervoCartas = ['images/static_parrot.png','images/404error_parrot.gif',
@@ -32,15 +33,19 @@ function jogar() {
 
     if(entradaNumeroCartas){
         totalPares = Number(entradaNumeroCartas)/2;
+        resetacronometro ()
+        startCronometro();
         game(entradaNumeroCartas/2);
     } 
 
 };
 function game(numeroDePares) {
 
-    cabeçalhoPagina.style.font = 20;
+    cabecalho.style.display = 'none';
+    cabecalho2.style.display = 'block';
     inputBotão.style.display = 'none';
     imagensExtras.style.display = 'none';
+ 
     acervoCartas.sort(comparer);
 
     acervoCartas.forEach( (_, i) => {
@@ -65,7 +70,7 @@ function distribuidorCartas(cartasUsadas){
         saidaGame += `
             <div id="carta${i}" class="carta" data-value="${e}">
                 <img id="frente" draggable="false" src="${e}">
-                <img id="verso" src='images/louroJose.jpg'>
+                <img id="verso" draggable="false" src='images/louroJose.jpg'>
             </div>
             `;
     });
@@ -108,14 +113,16 @@ function girar() {
 
 
 function confereParCartas(){
-        
+    
     let checkPar =  primeiraCarta.dataset.value === segundaCarta.dataset.value;
     if(!checkPar){
         desviraCarta()
     }else{
         if(++paresEncontrados === totalPares){
-            window.alert(`Parabéns você ganhou com ${contadorDeJogadas} jogadas!`);
+            window.alert(`Parabéns você ganhou com um tempo de: ${(horas > 0 ? (horas < 10 ? '0'+horas :horas) +' hora(s), ':"")}${(minutos > 0 ? (minutos < 10 ? '0'+minutos :minutos) + ' minuto(s) e ':'')}${(segundos<10 ? '0'+segundos :segundos) + ' segundo(s)'} e com ${contadorDeJogadas} jogadas!`);
+            congelaCronometro();
             reiniciar();
+           
         }
         resetCartas(checkPar); 
     }
@@ -142,6 +149,8 @@ function resetCartas(checkPar = false){
 function reiniciar(){
 
     let restart = window.confirm("Deseja jogar novamente ?");
+    const logo2 = document.querySelector(".nomeDoJogo");
+    logo2.addEventListener('click',voltarPaginaInicial);
 
     if(restart){
         cartasUsadas = []; 
@@ -156,4 +165,55 @@ function reiniciar(){
 
 function comparer() { 
 	return Math.random() - 0.5; 
+}
+
+let horas = 0;
+let minutos = 0;
+let segundos = 0;
+let auxCronometro;
+
+function startCronometro(){
+   
+    auxCronometro = setInterval(() => { cronometro(); }, 1000);
+    
+}
+
+function cronometro(){
+    segundos++;
+    if(segundos === 60) {
+        segundos = 0;
+        minutos++;
+
+        if(minutos === 60) {
+            minutos = 0;
+            horas++;
+        }
+    }
+    const saidaCronometro = document.querySelector('#timer');
+    saidaCronometro.innerHTML = `<h2>Tempo: ${(horas < 10 ? '0'+horas :horas)}:${(minutos < 10 ? '0'+minutos :minutos)}:${segundos<10 ? '0'+segundos :segundos}</h2>`;
+}
+
+function congelaCronometro(){
+    clearInterval(auxCronometro);
+}
+
+function resetacronometro () {
+    horas = 0;
+    minutos = 0;
+    segundos = 0;
+}
+function voltarPaginaInicial(){
+    cartasUsadas = []; 
+    paresEncontrados = 0;
+    contadorDeJogadas =0;
+    totalPares = 0;
+    saidaGame = '';
+    mesaDoJogo.innerHTML = "";
+    cabecalho.style.display = 'block';
+    cabecalho2.style.display = 'none';
+    inputBotão.style.display = 'block';
+    inputBotão.style.position = 'absolute';
+    inputBotão.style.left = '900px';
+    imagensExtras.style.display = 'block';
+    
 }
